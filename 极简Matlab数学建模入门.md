@@ -927,7 +927,6 @@ matlab提供syms方法用于求解方程组或者创建匿名函数矩阵。
 示例一：方程组
 $$\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0
  \\\sin x\cos y=1
-
 \end{cases}$$
 
 ```matlab
@@ -1567,7 +1566,6 @@ $$3\,\sin \left(5\,x\right)\,{\mathrm{e}}^{-2\,x}$$
 以最为常用的ode45函数为例：
 $$\begin{align*}{y}''' +5{y}'' {y}' -{y}'y=sinx
  \\y(0)=0,{y}'(0)=1,{y}''(0)=-1
-
 \end{align*}$$
 求解复杂微分方程问题，需自行封装函数进行求解，代码如下：
 
