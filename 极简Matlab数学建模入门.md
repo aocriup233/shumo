@@ -2053,7 +2053,7 @@ nvars是变量数，即length(x)。@objfun，@nonlcon方法与fmincon一致，in
 遗传算法往往需要绘制种群适应度曲线，可以在options中选择此选项进行实时绘制：
 
 ```matlab
-options = optimoptions('ga',’PlotFcn', @gaplotbestf);
+options = optimoptions('ga','PlotFcn', @gaplotbestf);
 ```
 
 除此之外options还可以设置遗传算法的相关参数，请读者了解遗传算法的基本原理后查询官方文档设置，笔者一般使用默认设置。
