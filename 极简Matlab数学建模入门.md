@@ -925,12 +925,10 @@ f=@(x,y)sin(x)+cos(y)-tan(x.*y);
 matlab提供syms方法用于求解方程组或者创建匿名函数矩阵。
 
 示例一：方程组
-$$
-\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0
+$$\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0
  \\\sin x\cos y=1
 
-\end{cases}
-$$
+\end{cases}$$
 
 ```matlab
 syms x y
@@ -939,13 +937,11 @@ eqn2=sin(x).*cos(y)==1;
 ```
 
 示例二：函数矩阵
-$$
-\begin{bmatrix}
+$$\begin{bmatrix}
  1 & 1 & 1\\
  x & y & z\\
  x^{2}  & y^{2} &z^{2}
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 ```matlab
 syms x y z
@@ -1087,12 +1083,10 @@ exp()：e指数；log()：自然对数
 ##### 协方差矩阵
 
 一般对两个向量计算协方差矩阵，计算结果含义如下：
-$$
-C=\begin{bmatrix}
+$$C=\begin{bmatrix}
  cov\left ( A,A \right )  &  cov\left ( A,B \right )\\
   cov\left ( B,A \right ) & cov\left ( B,B \right )
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 ```matlab
 A = [3 6 4];
@@ -1155,18 +1149,14 @@ p =
 mapminmax(x,min,max)：将数据按如下方式归一化到min和max之间，一般是0到1之间。
 
 需注意此函数按行进行归一化操作，如需按列计算需预先进行转置。
-$$
-x'=\frac{x-min(x)}{max(x)-min(x)}
-$$
+$$x'=\frac{x-min(x)}{max(x)-min(x)}$$
 
 ```matlab
 nx=mapminmax(x,0,1)
 ```
 
 **z-score标准化**
-$$
-x'=\frac{x-mean(x)}{\sigma}
-$$
+$$x'=\frac{x-mean(x)}{\sigma}$$
 
 
 ```matlab
@@ -1180,9 +1170,7 @@ nx=zscore(x)
 累积分布函数（cdf）
 
 以计算向量x的正态累积分布函数为例：
-$$
-F(x)=\frac{1}{\sqrt{2\pi }\sigma  } \int_{-\infty }^{x} e^{-\frac{(x-\mu )^{2}}{2\sigma ^{2}} } dx
-$$
+$$F(x)=\frac{1}{\sqrt{2\pi }\sigma  } \int_{-\infty }^{x} e^{-\frac{(x-\mu )^{2}}{2\sigma ^{2}} } dx$$
 
 ```matlab
 mu = 1;
@@ -1197,9 +1185,7 @@ y = cdf(pd,x)
 概率密度函数（pdf）
 
 以计算向量x的泊松概率密度函数为例：
-$$
-f(x)=\frac{\lambda ^{x}}{x!} e^{-\lambda }
-$$
+$$f(x)=\frac{\lambda ^{x}}{x!} e^{-\lambda }$$
 
 ```matlab
 lambda = 2;
@@ -1243,9 +1229,7 @@ y=mvnpdf(X,mu,Sigma)
 其中p为拟合多项式的系数向量，S为误差结构体，x为自变量向量，y为因变量向量，n为拟合阶数。
 
 拟合后的方程满足如下形式：
-$$
-p(x)=p_{1}x^{n}+p_{2}x^{n-1}+\dots +p_{n-1}x^{2}+p_{n}x+p_{n+1}
-$$
+$$p(x)=p_{1}x^{n}+p_{2}x^{n-1}+\dots +p_{n-1}x^{2}+p_{n}x+p_{n+1}$$
 示例：
 
 ```matlab
@@ -1279,9 +1263,7 @@ X为自变量矩阵，y为因变量向量。
 返回值中需着重关注系数向量b和检验值向量stats。其中stats向量中包含其中包含R方统计量、F统计量及其 p 值，以及误差方差的估计值。
 
 对于n维自变量矩阵，因变量向量的表达式为：
-$$
-y=b_{1}x_{1}+b_{2}x_{2}+\dots +b_{n}x_{n}
-$$
+$$y=b_{1}x_{1}+b_{2}x_{2}+\dots +b_{n}x_{n}$$
 示例：
 
 ```matlab
@@ -1313,9 +1295,7 @@ stats =
 ```
 
 故多元线性回归表达式为：
-$$
-y=1.5511x_{1}+0.5102x_{2}+0.1019x_{3}-0.1441x_{4}+62.4054
-$$
+$$y=1.5511x_{1}+0.5102x_{2}+0.1019x_{3}-0.1441x_{4}+62.4054$$
 stats第三项为p值，小于0.05的默认显著性水平，因此响应 `y` 和 `X` 中的预测变量之间存在显著的线性回归关系。
 
 ##### 主成分分析(PCA)和偏最小二乘回归(PLS)*
@@ -1410,9 +1390,7 @@ Y = 1×7
 数值导数
 
 matlab没有直接计算数值导数的方法，需要将导数差分化后近似计算。
-$$
-\frac{\mathrm{d} y}{\mathrm{d} x} =\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} =\lim_{\Delta x \to 0} \frac{diff(f(x))}{\Delta x} 
-$$
+$$\frac{\mathrm{d} y}{\mathrm{d} x} =\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} =\lim_{\Delta x \to 0} \frac{diff(f(x))}{\Delta x} $$
 
 ```
 dx=0.0001;
@@ -1443,9 +1421,7 @@ x*(log(x) - 1)
 数值积分
 
 示例一：
-$$
-\int_{0}^{+\infty } e^{-x^{2}}(lnx)^{2}
-$$
+$$\int_{0}^{+\infty } e^{-x^{2}}(lnx)^{2}$$
 
 ```matlab
 fun = @(x) exp(-x.^2).*log(x).^2;
@@ -1455,12 +1431,10 @@ q = 1.9475
 ```
 
 示例二：
-$$
-\begin{align*}
+$$\begin{align*}
  \\\iint _{s}\frac{r}{\sqrt{rcos\theta +rsin\theta } (1+rcos\theta +rsin\theta)^{2}}
 \\s:0\le \theta \le \frac{\pi }{2} ,0\le r\le \frac{1}{sin\theta+cos\theta } 
-\end{align*} 
-$$
+\end{align*} $$
 
 ```matlab
 fun = @(x,y) 1./( sqrt(x + y) .* (1 + x + y).^2 );
@@ -1480,9 +1454,7 @@ q = 0.2854
 方法一：syms+solve
 
 示例：
-$$
-x^{3}=-1
-$$
+$$x^{3}=-1$$
 
 ```matlab
 syms x
@@ -1505,9 +1477,7 @@ s = -1
 fzero函数：
 
 示例
-$$
-sinx=0
-$$
+$$sinx=0$$
 
 ```matlab
 f=@(x)sin(x);
@@ -1536,12 +1506,10 @@ x为最值点，fval为最小值。
 ##### 解方程组
 
 示例一：
-$$
-\begin{align*}
+$$\begin{align*}
  \\2u^{2}+v^{2}=0
 \\u-v=1
-\end{align*} 
-$$
+\end{align*} $$
 
 ```matlab
 syms u v
@@ -1551,12 +1519,10 @@ vars = [v u];
 ```
 
 示例二：
-$$
-\begin{align*}
+$$\begin{align*}
  \\x^{2}+y^{2}+xy<1
 \\x>0,y>0
-\end{align*} 
-$$
+\end{align*} $$
 
 ```matlab
 syms x y
@@ -1576,43 +1542,33 @@ solve是一个非常强大的求解器，除了可以求解方程组、不等式
 解析解（dsolve)
 
 示例一：无约束微分方程
-$$
-{y}'' +2{y}' +y=x^{2}
-$$
+$${y}'' +2{y}' +y=x^{2}$$
 
 ```matlab
 y=dsolve('D2y+2*Dy+y-x^2=0','x')
 ```
 
 y = 
-$$
-x^2 -4\,x+C_1 \,{\mathrm{e}}^{-x} +C_2 \,x\,{\mathrm{e}}^{-x} +6
-$$
+$$x^2 -4\,x+C_1 \,{\mathrm{e}}^{-x} +C_2 \,x\,{\mathrm{e}}^{-x} +6$$
 示例二：有初值微分方程
-$$
-\begin{align*}{y}'' +4{y}' +29y=0
+$$\begin{align*}{y}'' +4{y}' +29y=0
  \\y(0)=0,{y}'' (0)=15
 
-\end{align*}
-$$
+\end{align*}$$
 
 ```matlab
 y=dsolve('D2y+4*Dy+29*y','y(0)=0,Dy(0)=15','x')
 ```
 
 y =
-$$
-3\,\sin \left(5\,x\right)\,{\mathrm{e}}^{-2\,x}
-$$
+$$3\,\sin \left(5\,x\right)\,{\mathrm{e}}^{-2\,x}$$
 数值估计解
 
 以最为常用的ode45函数为例：
-$$
-\begin{align*}{y}''' +5{y}'' {y}' -{y}'y=sinx
+$$\begin{align*}{y}''' +5{y}'' {y}' -{y}'y=sinx
  \\y(0)=0,{y}'(0)=1,{y}''(0)=-1
 
-\end{align*}
-$$
+\end{align*}$$
 求解复杂微分方程问题，需自行封装函数进行求解，代码如下：
 
 ```matlab
@@ -1639,13 +1595,9 @@ end
 matlab提供了pdepe函数计算偏微分方程的数值解，但由于求解要求的偏微分方程形式以及边界条件非常苛刻，建议根据物理模型先将偏微分方程简化为常微分方程，再使用求解常微分方程的方法进行求解。
 
 pdepe求解的偏微分方程的标准形式：
-$$
-c(x,t,u,\frac{\partial u}{\partial x} )\frac{\partial u}{\partial t} =x^{-m}\frac{\partial }{\partial x} (x^{m}f(x,t,u,\frac{\partial u}{\partial x} ))+s(x,t,u,\frac{\partial u}{\partial x} )
-$$
+$$c(x,t,u,\frac{\partial u}{\partial x} )\frac{\partial u}{\partial t} =x^{-m}\frac{\partial }{\partial x} (x^{m}f(x,t,u,\frac{\partial u}{\partial x} ))+s(x,t,u,\frac{\partial u}{\partial x} )$$
 pdepe求解的偏微分方程的边界条件的标准形式：
-$$
-p(x,t,u)+q(x,t)f(x,t,u,\frac{\partial u}{\partial x} )=0
-$$
+$$p(x,t,u)+q(x,t)f(x,t,u,\frac{\partial u}{\partial x} )=0$$
 pdepe的调用格式为：
 
 ```matlab
@@ -1779,15 +1731,13 @@ kidx = kmeans(X,2);
 简单的线性规划和整数规划、0-1规划建议使用lingo进行求解，详情见lingo教程。
 
 linprog能够求解的优化问题类型严格满足如下标准形式：
-$$
-\begin{align*}min\space f^{T}x
+$$\begin{align*}min\space f^{T}x
  \\s.t.\begin{cases}A\cdot x\le b
  \\Aeq\cdot x=beq
 \\lb\le x\le ub
 \end{cases}
 
-\end{align*}
-$$
+\end{align*}$$
 调用代码：
 
 ```matlab
@@ -1799,8 +1749,7 @@ $$
 这么说比较抽象，下面给出示例：
 
 求解如下形式的线性优化问题：
-$$
-\begin{align*}max\space  {\textstyle -\sum_{i=1}^{6}x_{i}} 
+$$\begin{align*}max\space  {\textstyle -\sum_{i=1}^{6}x_{i}} 
  \\s.t.\begin{cases} 3x_{1}+5x_{3}-2x_{4}\le 6
 \\x_{1}-2x_{2}+x_{6}\ge 2
  \\x_{1}+x_{2}-x_{4}=-2
@@ -1808,13 +1757,11 @@ $$
 \\x_{i}\ge 0
 \end{cases}
 
-\end{align*}
-$$
+\end{align*}$$
 将目标函数和约束条件都写成矩阵乘法形式：
 
 **需注意，matlab所有的优化求解器都只能求解最小型问题，如果是最大型问题需要取负值转化为最小型问题。**
-$$
-\begin{align*}min\space  \begin{bmatrix}
+$$\begin{align*}min\space  \begin{bmatrix}
 1  & 1 & 1 & 1 & 1 &1
 \end{bmatrix}\cdot x
  \\s.t.\begin{cases} 
@@ -1840,8 +1787,7 @@ $$
 \end{bmatrix}^{T}
 \end{cases}
 
-\end{align*}
-$$
+\end{align*}$$
 故代码为：
 
 ```matlab
@@ -1880,16 +1826,14 @@ intlinprog函数与linprog能求解的优化问题满足的标准形式相似，
 其中intcon为离散型决策变量向量，填写需要限制为整数型的决策变量的下标。x0为初始点向量，提供一个合理的初始点可以更快的找到最优值，不提供初始点则随机初始点查找。
 
 示例：
-$$
-\begin{align*}
+$$\begin{align*}
 \\min \space -3x_{1}-2x_{2}-x_{3}
 \\\begin{cases}x_{1}+x_{2}+x_{3}\le 7
  \\4x_{1}+2x_{2}+x_{3}=12
  \\x_{1},x_{2}\ge 0,x_{3}=0\space or\space 1
 
 \end{cases}
-\end{align*}
-$$
+\end{align*}$$
 依然是将目标函数与约束条件写成矩阵乘法形式，这里不再赘述。下面仅谈论0-1变量的处理方法，
 
 在这个问题中x{3}为0-1变量，故先设置x{3}为整型变量，在设置上界为1。
@@ -1929,8 +1873,7 @@ problem = prob2struct(prob);
 fmincon函数无疑是matlab最实用的函数，它可以解决大部分的优化问题，当你无法判断自己建立的优化模型适合用什么求解器求解，那几乎可以无脑选择fmincon，支持匿名函数使得你几乎可以封装任意形式的目标函数与约束变量进行求解。
 
 fmincon求解的优化问题需严格按照以下标准形式：
-$$
-\begin{align*}min\space f(x)
+$$\begin{align*}min\space f(x)
  \\s.t.\begin{cases}c(x)\le 0
  \\ceq(x)=0
  \\A\cdot x\le b
@@ -1938,8 +1881,7 @@ $$
 \\lb\le x\le ub
 \end{cases}
 
-\end{align*}
-$$
+\end{align*}$$
 基本调用形式：
 
 ```matlab
@@ -2006,12 +1948,10 @@ end
 对于多个非线性约束条件，可以采用返回向量的方法。
 
 示例：
-$$
-\begin{align*} lnx_{i}-sinx_{i}\ge 1,i=1\dots 7
+$$\begin{align*} lnx_{i}-sinx_{i}\ge 1,i=1\dots 7
  \\\left \lfloor x_{i}+x_{i+1} \right \rfloor =4,i=1\dots 6
 \\if\space x_{3}\ge 3,x_{4}\ge x_{7}
-\end{align*}
-$$
+\end{align*}$$
 对于相同构造的非线性约束条件，可以采用循环结构赋值返回c和ceq，对于约束条件中存在if语句的情况，视作分段函数处理，统一放在@nonlcon函数中。
 
 ```matlab
