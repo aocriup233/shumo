@@ -925,9 +925,7 @@ f=@(x,y)sin(x)+cos(y)-tan(x.*y);
 matlab提供syms方法用于求解方程组或者创建匿名函数矩阵。
 
 示例一：方程组
-$$\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0
- \\\sin x\cos y=1
-\end{cases}$$
+$$\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0 \\\sin x\cos y=1\end{cases}$$
 
 ```matlab
 syms x y
@@ -936,11 +934,7 @@ eqn2=sin(x).*cos(y)==1;
 ```
 
 示例二：函数矩阵
-$$\begin{bmatrix}
- 1 & 1 & 1\\
- x & y & z\\
- x^{2}  & y^{2} &z^{2}
-\end{bmatrix}$$
+$$\begin{bmatrix} 1 & 1 & 1\\ x & y & z\\ x^{2}  & y^{2} &z^{2}\end{bmatrix}$$
 
 ```matlab
 syms x y z
