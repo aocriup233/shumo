@@ -906,9 +906,7 @@ break，continue，while的用法类似于c，不做说明。
 对于数学函数表达式，最好采用匿名函数的方式进行封装，这里使用python类比。
 
 对于二元函数
-$$
-f(x,y)=sinx+cosy-tanxy
-$$
+$$f(x,y)=sinx+cosy-tanxy$$
 python
 
 ```python
