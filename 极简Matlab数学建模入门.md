@@ -930,7 +930,6 @@ matlab提供syms方法用于求解方程组或者创建匿名函数矩阵。
 $$
 \begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0
  \\\sin x\cos y=1
-
 \end{cases}
 $$
 
