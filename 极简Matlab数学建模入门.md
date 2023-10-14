@@ -906,7 +906,9 @@ break，continue，while的用法类似于c，不做说明。
 对于数学函数表达式，最好采用匿名函数的方式进行封装，这里使用python类比。
 
 对于二元函数
-$$f(x,y)=sinx+cosy-tanxy$$
+$$
+f(x,y)=sinx+cosy-tanxy
+$$
 python
 
 ```python
@@ -925,7 +927,9 @@ f=@(x,y)sin(x)+cos(y)-tan(x.*y);
 matlab提供syms方法用于求解方程组或者创建匿名函数矩阵。
 
 示例一：方程组
-$$\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0 \\\sin x\cos y=1\end{cases}$$
+$$
+\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0 \\\sin x\cos y=1\end{cases}
+$$
 
 ```matlab
 syms x y
