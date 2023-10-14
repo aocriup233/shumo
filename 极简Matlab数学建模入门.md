@@ -928,9 +928,7 @@ matlab提供syms方法用于求解方程组或者创建匿名函数矩阵。
 
 示例一：方程组
 $$
-\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0
- \\\sin x\cos y=1
-\end{cases}
+\begin{cases}\frac{x}{\cos y} +\frac{y}{\cos x} =0 \\\sin x\cos y=1\end{cases}
 $$
 
 ```matlab
@@ -941,11 +939,7 @@ eqn2=sin(x).*cos(y)==1;
 
 示例二：函数矩阵
 $$
-\begin{bmatrix}
- 1 & 1 & 1\\
- x & y & z\\
- x^{2}  & y^{2} &z^{2}
-\end{bmatrix}
+\begin{bmatrix} 1 & 1 & 1\\ x & y & z\\ x^{2}  & y^{2} &z^{2}\end{bmatrix}
 $$
 
 ```matlab
@@ -1081,10 +1075,7 @@ exp()：e指数；log()：自然对数
 
 示例：
 $$
-f(x)=\begin{cases}e^{x},x\le 0
- \\cosx,x>0
-
-\end{cases}
+f(x)=\begin{cases}e^{x},x\le 0 \\cosx,x>0\end{cases}
 $$
 
 ```matlab
@@ -1120,10 +1111,7 @@ y=piecewise(x<0,exp(x),x>0,cos(x));
 
 一般对两个向量计算协方差矩阵，计算结果含义如下：
 $$
-C=\begin{bmatrix}
- cov\left ( A,A \right )  &  cov\left ( A,B \right )\\
-  cov\left ( B,A \right ) & cov\left ( B,B \right )
-\end{bmatrix}
+C=\begin{bmatrix} cov\left ( A,A \right )  &  cov\left ( A,B \right )\\  cov\left ( B,A \right ) & cov\left ( B,B \right )\end{bmatrix}
 $$
 
 ```matlab
@@ -1298,7 +1286,7 @@ y=[2,8,16,29,50,72,63];
 
 ##### 曲线拟合工具箱
 
-![image-20231005150240292](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20231005150240292.png)
+![](F:\shumo\imag1.png)
 
 曲线拟合工具箱在数学建模过程中较为常用，提供了多种数据拟合方式，可以比较选择拟合优度最好的拟合方式进行数据拟合，除了拟合二维曲线，还可以拟合三维曲面。如图为上面数据的拟合结果。
 
@@ -1443,7 +1431,7 @@ Y = 1×7
 
 matlab没有直接计算数值导数的方法，需要将导数差分化后近似计算。
 $$
-\frac{\mathrm{d} y}{\mathrm{d} x} =\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} =\lim_{\Delta x \to 0} \frac{diff(f(x))}{\Delta x} 
+\frac{\mathrm{d} y}{\mathrm{d} x} =\lim_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x} =\lim_{\Delta x \to 0} \frac{diff(f(x))}{\Delta x}
 $$
 
 ```
@@ -1478,11 +1466,11 @@ ans =
 
 示例二：
 $$
-\lim_{x \to 0^{+}} arctan(x-\frac{1}{x}) 
+\lim_{x \to 0^{+}} arctan(x-\frac{1}{x})
 $$
 
 $$
-\lim_{x \to 0^{-}} arctan(x-\frac{1}{x}) 
+\lim_{x \to 0^{-}} arctan(x-\frac{1}{x})
 $$
 
 ```matlab
@@ -1531,10 +1519,7 @@ q = 1.9475
 
 示例二：
 $$
-\begin{align*}
- \\\iint _{s}\frac{r}{\sqrt{rcos\theta +rsin\theta } (1+rcos\theta +rsin\theta)^{2}}
-\\s:0\le \theta \le \frac{\pi }{2} ,0\le r\le \frac{1}{sin\theta+cos\theta } 
-\end{align*} 
+\begin{align*} \\\iint _{s}\frac{r}{\sqrt{rcos\theta +rsin\theta } (1+rcos\theta +rsin\theta)^{2}}\\s:0\le \theta \le \frac{\pi }{2} ,0\le r\le \frac{1}{sin\theta+cos\theta } \end{align*}
 $$
 
 ```matlab
@@ -1612,10 +1597,7 @@ x为最值点，fval为最小值。
 
 示例一：
 $$
-\begin{align*}
- \\2u^{2}+v^{2}=0
-\\u-v=1
-\end{align*} 
+\begin{align*} \\2u^{2}+v^{2}=0\\u-v=1\end{align*}
 $$
 
 ```matlab
@@ -1627,10 +1609,7 @@ vars = [v u];
 
 示例二：
 $$
-\begin{align*}
- \\x^{2}+y^{2}+xy<1
-\\x>0,y>0
-\end{align*} 
+\begin{align*} \\x^{2}+y^{2}+xy<1\\x>0,y>0\end{align*}
 $$
 
 ```matlab
@@ -1665,10 +1644,7 @@ x^2 -4\,x+C_1 \,{\mathrm{e}}^{-x} +C_2 \,x\,{\mathrm{e}}^{-x} +6
 $$
 示例二：有初值微分方程
 $$
-\begin{align*}{y}'' +4{y}' +29y=0
- \\y(0)=0,{y}'' (0)=15
-
-\end{align*}
+\begin{align*}{y}'' +4{y}' +29y=0 \\y(0)=0,{y}'' (0)=15\end{align*}
 $$
 
 ```matlab
@@ -1683,10 +1659,7 @@ $$
 
 以最为常用的ode45函数为例：
 $$
-\begin{align*}{y}''' +5{y}'' {y}' -{y}'y=sinx
- \\y(0)=0,{y}'(0)=1,{y}''(0)=-1
-
-\end{align*}
+\begin{align*}{y}''' +5{y}'' {y}' -{y}'y=sinx \\y(0)=0,{y}'(0)=1,{y}''(0)=-1\end{align*}
 $$
 求解复杂微分方程问题，需自行封装函数进行求解，代码如下：
 
@@ -1707,7 +1680,7 @@ end
 
 经过绘制，y(x)在[-5 5]的图像如下：
 
-![img](file:///C:\Users\lenovo\AppData\Local\Temp\ConnectorClipboard7828624512766463206/image16965088181510.png)
+![img](file://F:/shumo/odeimg.png)
 
 选择ode求解器
 
@@ -1872,13 +1845,7 @@ kidx = kmeans(X,2);
 
 linprog能够求解的优化问题类型严格满足如下标准形式：
 $$
-\begin{align*}min\space f^{T}x
- \\s.t.\begin{cases}A\cdot x\le b
- \\Aeq\cdot x=beq
-\\lb\le x\le ub
-\end{cases}
-
-\end{align*}
+\begin{align*}min\space f^{T}x \\s.t.\begin{cases}A\cdot x\le b \\Aeq\cdot x=beq\\lb\le x\le ub\end{cases}\end{align*}
 $$
 调用代码：
 
@@ -1892,47 +1859,13 @@ $$
 
 求解如下形式的线性优化问题：
 $$
-\begin{align*}max\space  {\textstyle -\sum_{i=1}^{6}x_{i}} 
- \\s.t.\begin{cases} 3x_{1}+5x_{3}-2x_{4}\le 6
-\\x_{1}-2x_{2}+x_{6}\ge 2
- \\x_{1}+x_{2}-x_{4}=-2
-\\x_3-x_{5}=0
-\\x_{i}\ge 0
-\end{cases}
-
-\end{align*}
+\begin{align*}max\space  {\textstyle -\sum_{i=1}^{6}x_{i}}  \\s.t.\begin{cases} 3x_{1}+5x_{3}-2x_{4}\le 6\\x_{1}-2x_{2}+x_{6}\ge 2 \\x_{1}+x_{2}-x_{4}=-2\\x_3-x_{5}=0\\x_{i}\ge 0\end{cases}\end{align*}
 $$
 将目标函数和约束条件都写成矩阵乘法形式：
 
 **需注意，matlab所有的优化求解器都只能求解最小型问题，如果是最大型问题需要取负值转化为最小型问题。**
 $$
-\begin{align*}min\space  \begin{bmatrix}
-1  & 1 & 1 & 1 & 1 &1
-\end{bmatrix}\cdot x
- \\s.t.\begin{cases} 
-\begin{bmatrix}
- 3 & 0 & 5 & -2 & 0 & 0\\
- -1 & 2 & 0 & 0 & 0 &-1
-\end{bmatrix}x\le \begin{bmatrix}6
- \\-2
-
-\end{bmatrix}
-
-\\\begin{bmatrix}
- 1 & 1 & 0 & -1 & 0 & 0\\
- 0 & 0 & 1 & 0 & -1 &0
-\end{bmatrix}x=\begin{bmatrix}-2
- \\0
-
-\end{bmatrix}
-\\\begin{bmatrix}
- 0 & 0 & 0 & 0 & 0 &0
-\end{bmatrix}^{T}\le x\le \begin{bmatrix}
- +\infty  & +\infty  & +\infty  & +\infty  & +\infty  &+\infty 
-\end{bmatrix}^{T}
-\end{cases}
-
-\end{align*}
+\begin{align*}min\space  \begin{bmatrix}1  & 1 & 1 & 1 & 1 &1\end{bmatrix}\cdot x \\s.t.\begin{cases} \begin{bmatrix} 3 & 0 & 5 & -2 & 0 & 0\\ -1 & 2 & 0 & 0 & 0 &-1\end{bmatrix}x\le \begin{bmatrix}6 \\-2\end{bmatrix}\\\begin{bmatrix} 1 & 1 & 0 & -1 & 0 & 0\\ 0 & 0 & 1 & 0 & -1 &0\end{bmatrix}x=\begin{bmatrix}-2 \\0\end{bmatrix}\\\begin{bmatrix} 0 & 0 & 0 & 0 & 0 &0\end{bmatrix}^{T}\le x\le \begin{bmatrix} +\infty  & +\infty  & +\infty  & +\infty  & +\infty  &+\infty \end{bmatrix}^{T}\end{cases}\end{align*}
 $$
 故代码为：
 
@@ -1973,14 +1906,7 @@ intlinprog函数与linprog能求解的优化问题满足的标准形式相似，
 
 示例：
 $$
-\begin{align*}
-\\min \space -3x_{1}-2x_{2}-x_{3}
-\\\begin{cases}x_{1}+x_{2}+x_{3}\le 7
- \\4x_{1}+2x_{2}+x_{3}=12
- \\x_{1},x_{2}\ge 0,x_{3}=0\space or\space 1
-
-\end{cases}
-\end{align*}
+\begin{align*}\\min \space -3x_{1}-2x_{2}-x_{3}\\\begin{cases}x_{1}+x_{2}+x_{3}\le 7 \\4x_{1}+2x_{2}+x_{3}=12 \\x_{1},x_{2}\ge 0,x_{3}=0\space or\space 1\end{cases}\end{align*}
 $$
 依然是将目标函数与约束条件写成矩阵乘法形式，这里不再赘述。下面仅谈论0-1变量的处理方法，
 
@@ -2022,15 +1948,7 @@ fmincon函数无疑是matlab最实用的函数，它可以解决大部分的优�
 
 fmincon求解的优化问题需严格按照以下标准形式：
 $$
-\begin{align*}min\space f(x)
- \\s.t.\begin{cases}c(x)\le 0
- \\ceq(x)=0
- \\A\cdot x\le b
- \\Aeq\cdot x=beq
-\\lb\le x\le ub
-\end{cases}
-
-\end{align*}
+\begin{align*}min\space f(x) \\s.t.\begin{cases}c(x)\le 0 \\ceq(x)=0 \\A\cdot x\le b \\Aeq\cdot x=beq\\lb\le x\le ub\end{cases}\end{align*}
 $$
 基本调用形式：
 
@@ -2099,10 +2017,7 @@ end
 
 示例：
 $$
-\begin{align*} lnx_{i}-sinx_{i}\ge 1,i=1\dots 7
- \\\left \lfloor x_{i}+x_{i+1} \right \rfloor =4,i=1\dots 6
-\\if\space x_{3}\ge 3,x_{4}\ge x_{7}
-\end{align*}
+\begin{align*} lnx_{i}-sinx_{i}\ge 1,i=1\dots 7 \\\left \lfloor x_{i}+x_{i+1} \right \rfloor =4,i=1\dots 6\\if\space x_{3}\ge 3,x_{4}\ge x_{7}\end{align*}
 $$
 对于相同构造的非线性约束条件，可以采用循环结构赋值返回c和ceq，对于约束条件中存在if语句的情况，视作分段函数处理，统一放在@nonlcon函数中。
 
@@ -2180,4 +2095,6 @@ options = gaoptimset('ParetoFraction',0.3,'PopulationSize',100,'Generations',200
 除此之外，matlab还提供了粒子群算法求解器particleswarm和模拟退火算法求解器simulannealbnd，感兴趣的读者请自行查询文档。
 
 ## 绘图
+
+#### 二维线图
 
