@@ -2096,5 +2096,4 @@ options = gaoptimset('ParetoFraction',0.3,'PopulationSize',100,'Generations',200
 
 ## 绘图
 
-#### 二维线图
-
+见数学建模绘图教程.md（该教程包括matlab和python库matplotlib的绘图方法）
