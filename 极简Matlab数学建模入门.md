@@ -1682,7 +1682,7 @@ end
 
 经过绘制，y(x)在[-5 5]的图像如下：
 
-![](.shumo/odeimg.png)
+![](./shumo/odeimg.png)
 
 选择ode求解器
 
@@ -2114,7 +2114,7 @@ plot(x,y1)
 title('function1')
 ```
 
-![](.shumo/plot111.png)
+![](./shumo/plot111.png)
 
 可以为其添加副标题：
 
@@ -2122,7 +2122,7 @@ title('function1')
 [t,s]=title('function1','expx')
 ```
 
-![](.shumo/plot112.png)
+![](./shumo/plot112.png)
 
 此外，可以使用title函数添加字段改变标题大小、字体、颜色等，在此不作演示。
 
@@ -2162,7 +2162,7 @@ plot(x,y3)
 hold off
 ```
 
-![](.shumo/plot12.png)
+![](./shumo/plot12.png)
 
 #### 图例
 
@@ -2172,7 +2172,7 @@ hold off
 legend('exp(x)/10','log(x)','sin(x)','Location','northwest')
 ```
 
-![](.shumo/plot13.png)
+![](./shumo/plot13.png)
 
 legend函数默认图例位于右上角，时常会挡住图像，可以使用字段location改变图例位置，还可以使用字段NumColumns改变图例的列数。
 
@@ -2205,7 +2205,7 @@ plot(x,y4)
 title('Subplot 4: sin(8x)')
 ```
 
-![](.shumo/plot14.png)
+![](./shumo/plot14.png)
 
 #### 二维图
 
@@ -2223,11 +2223,11 @@ figure
 plot(x,y1,'g',x,y2,'b--o',x,y3,'c*')
 ```
 
-![](.shumo/plot15.png)
+![](./shumo/plot15.png)
 
-![](.shumo/imag2.png)
+![](./shumo/imag2.png)
 
-![](.shumo/imag3.png)
+![](./shumo/imag3.png)
 
 ##### 极坐标图
 
@@ -2243,7 +2243,7 @@ rho = sin(2*theta).*cos(2*theta);
 polarplot(theta,rho)
 ```
 
-![](.shumo/plot151.png)
+![](./shumo/plot151.png)
 
 ##### 水平线
 
@@ -2256,7 +2256,7 @@ plot(x,y)
 xline(1,'-','渐近线');
 ```
 
-![](.shumo/plot152.png)
+![](./shumo/plot152.png)
 
 ##### 注释
 
@@ -2271,7 +2271,7 @@ y = [0.2 0.1];
 annotation('textarrow',x,y,'String','不可导点')
 ```
 
-![](.shumo/plot153.png)
+![](./shumo/plot153.png)
 
 不建议使用上述方法在图中注释。
 
@@ -2285,7 +2285,7 @@ y = cos(x) + rand(1,200);
 scatter(x,y)
 ```
 
-![](.shumo/plot154.png)
+![](./shumo/plot154.png)
 
 可以添加不同字段改变散点颜色和形状：
 
@@ -2312,7 +2312,7 @@ V = cos(X);
 quiver(X,Y,U,V,'r')
 ```
 
-![](.shumo/plot155.png)
+![](./shumo/plot155.png)
 
 #### 三维图
 
@@ -2332,7 +2332,7 @@ view([-8.71 9.37])
 
 使用view函数可以改变视角。在绘图时可以使用鼠标在图块中旋转图像以便获得最佳视角。
 
-![](.shumo/plot156.png)
+![](./shumo/plot156.png)
 
 ##### 三维曲面图
 
@@ -2344,7 +2344,7 @@ Z = sin(X) + cos(Y);
 surf(X,Y,Z)
 ```
 
-![](.shumo/plot157.png)
+![](./shumo/plot157.png)
 
 #### 统计图
 
@@ -2384,7 +2384,7 @@ text(xtips,ytips,labels,'HorizontalAlignment','center',...
     'VerticalAlignment','bottom')
 ```
 
-![](.shumo/plot161.png)
+![](./shumo/plot161.png)
 
 ##### 频数分布直方图
 
@@ -2396,7 +2396,7 @@ nbins = 25;
 h = histogram(x,nbins)
 ```
 
-![](.shumo/plot162.png)
+![](./shumo/plot162.png)
 
 ##### 饼图
 
@@ -2408,7 +2408,7 @@ labels = {'Taxes','Expenses','Profit'};
 pie(X,labels)
 ```
 
-![](.shumo/plot163.png)
+![](./shumo/plot163.png)
 
 ##### 箱线图
 
@@ -2421,7 +2421,7 @@ xlabel('Column')
 ylabel('Value')
 ```
 
-![](.shumo/plot164.png)
+![](./shumo/plot164.png)
 
 ##### 热力图
 
@@ -2433,7 +2433,7 @@ h=corrcoef(x');
 heatmap(h)
 ```
 
-![](.shumo/plot165.png)
+![](./shumo/plot165.png)
 
 ##### 聚类树状图*
 
@@ -2446,4 +2446,4 @@ figure()
 dendrogram(tree)
 ```
 
-![](.shumo/plot166.png)
+![](./shumo/plot166.png)
