@@ -2098,3 +2098,352 @@ options = gaoptimset('ParetoFraction',0.3,'PopulationSize',100,'Generations',200
 
 ## 绘图
 
+本章第一到四部分均以二维线图为例进行说明。
+
+#### 数轴标签、标题
+
+可以使用title函数为一幅图像添加标题。
+
+示例：绘制指数函数图像，并为其添加标题：
+
+```matlab
+clc,clear;
+x=1:0.1:10;
+y1=exp(x);
+plot(x,y1)
+title('function1')
+```
+
+![](F:\shumo\plot111.png)
+
+可以为其添加副标题：
+
+```matlab
+[t,s]=title('function1','expx')
+```
+
+![](F:\shumo\plot112.png)
+
+此外，可以使用title函数添加字段改变标题大小、字体、颜色等，在此不作演示。
+
+matlab支持latex公式语法：
+
+```matlab
+[t,s]=title('function1','y=e^{x} ')
+```
+
+可以使用xlabel，ylabel，zlabel函数为坐标轴添加标签：
+
+```matlab
+xlabel('x'),ylabel('y')
+```
+
+上述函数同样支持多行，不同字体样式和latex公式语法。
+
+#### 合并多个绘图
+
+matlab支持在同一区域绘制多个绘图
+
+示例：
+
+在同一图块绘制指数函数、对数函数、三角函数图像。
+
+```matlab
+x=0:0.01:3.14;
+y1=exp(x)/10;
+plot(x,y1)
+title('functions')
+xlabel('x'),ylabel('y')
+hold on
+y2=log(x);
+y3=sin(x);
+plot(x,y2)
+plot(x,y3)
+hold off
+```
+
+![](F:\shumo\plot12.png)
+
+#### 图例
+
+示例：给上述示例添加图例。
+
+```matlab
+legend('exp(x)/10','log(x)','sin(x)','Location','northwest')
+```
+
+![](F:\shumo\plot13.png)
+
+legend函数默认图例位于右上角，时常会挡住图像，可以使用字段location改变图例位置，还可以使用字段NumColumns改变图例的列数。
+
+#### 分块图
+
+有时候我们需要将不同的图画到不同的图块上，此时需要用到subplot函数。
+
+subplot(m,n,p)表示将图块划分为m行n列，并在p处绘制下面代码所描述的图像。
+
+```matlab
+subplot(2,2,1)
+x = linspace(0,10);
+y1 = sin(x);
+plot(x,y1)
+title('Subplot 1: sin(x)')
+
+subplot(2,2,2)
+y2 = sin(2*x);
+plot(x,y2)
+title('Subplot 2: sin(2x)')
+
+subplot(2,2,3)
+y3 = sin(4*x);
+plot(x,y3)
+title('Subplot 3: sin(4x)')
+
+subplot(2,2,4)
+y4 = sin(8*x);
+plot(x,y4)
+title('Subplot 4: sin(8x)')
+```
+
+![](F:\shumo\plot14.png)
+
+#### 二维图
+
+##### 二维线图
+
+上面介绍了使用plot函数绘制线图的一般方法，下面示例给出了改变线型颜色的一般方式：
+
+```matlab
+x = 0:pi/10:2*pi;
+y1 = sin(x);
+y2 = sin(x-0.25);
+y3 = sin(x-0.5);
+
+figure
+plot(x,y1,'g',x,y2,'b--o',x,y3,'c*')
+```
+
+![](F:\shumo\plot15.png)
+
+![](F:\shumo\imag2.png)
+
+![](F:\shumo\imag3.png)
+
+##### 极坐标图
+
+示例：
+
+```math
+r=sin2\theta \cdot cos2\theta 
+```
+
+```matlab
+theta = 0:0.01:2*pi;
+rho = sin(2*theta).*cos(2*theta);
+polarplot(theta,rho)
+```
+
+![](F:\shumo\plot151.png)
+
+##### 水平线
+
+示例：
+
+```matlab
+x=0:0.01:5;
+y=1./(x-1);
+plot(x,y)
+xline(1,'-','渐近线');
+```
+
+![](F:\shumo\plot152.png)
+
+##### 注释
+
+示例：
+
+```matlab
+x=-5:0.1:5;
+y=abs(x);
+plot(x,y)
+x = [0.3 0.52];
+y = [0.2 0.1];
+annotation('textarrow',x,y,'String','不可导点')
+```
+
+![](F:\shumo\plot153.png)
+
+不建议使用上述方法在图中注释。
+
+##### 散点图
+
+示例：
+
+```matlab
+x = linspace(0,3*pi,200);
+y = cos(x) + rand(1,200);  
+scatter(x,y)
+```
+
+![](F:\shumo\plot154.png)
+
+可以添加不同字段改变散点颜色和形状：
+
+```matlab
+sz = 25;
+c = linspace(1,10,length(x));
+scatter(x,y,sz,c,'filled')
+```
+
+使用polarscatter绘制极坐标下的散点图，使用scatter3函数可以绘制三维散点图。
+
+##### 针状图*
+
+使用stem函数可以绘制离散针状图，使用autocorr函数可以绘制时间序列的自相关系数图，这在arima预测模型中会使用到。
+
+##### 向量图*
+
+示例：
+
+```matlab
+[X,Y] = meshgrid(-pi:pi/8:pi,-pi:pi/8:pi);
+U = sin(Y);
+V = cos(X);
+quiver(X,Y,U,V,'r')
+```
+
+![](F:\shumo\plot155.png)
+
+#### 三维图
+
+##### 三维曲线图
+
+示例：
+
+```matlab
+t = 0:pi/500:40*pi;
+xt = (3 + cos(sqrt(32)*t)).*cos(t);
+yt = sin(sqrt(32) * t);
+zt = (3 + cos(sqrt(32)*t)).*sin(t);
+plot3(xt,yt,zt)
+
+view([-8.71 9.37])
+```
+
+使用view函数可以改变视角。在绘图时可以使用鼠标在图块中旋转图像以便获得最佳视角。
+
+![](F:\shumo\plot156.png)
+
+##### 三维曲面图
+
+示例：
+
+```matlab
+[X,Y] = meshgrid(1:0.5:10,1:20);
+Z = sin(X) + cos(Y);
+surf(X,Y,Z)
+```
+
+![](F:\shumo\plot157.png)
+
+#### 统计图
+
+##### 条形图
+
+示例：
+
+分图1：使用向量绘制普通的统计图。
+
+分图2：使用矩阵绘制含簇的条形统计图。
+
+分图3：绘制堆叠条形统计图。
+
+分图4：在分图1的基础上在条形上方标记数字。
+
+```matlab
+subplot(2,2,1);
+x = 1900:10:2000;
+y = [75 91 105 123.5 131 150 179 203 226 249 281.5];
+bar(x,y)
+subplot(2,2,2);
+X = categorical({'a','b','c','d'});
+y = [2 2 3; 2 5 6; 2 8 9; 2 11 12];
+bar(X,y)
+subplot(2,2,3);
+X = categorical({'a','b','c','d'});
+y = [2 2 3; 2 5 6; 2 8 9; 2 11 12];
+bar(X,y,'stacked')
+subplot(2,2,4);
+x = 1900:10:2000;
+y = [75 91 105 123.5 131 150 179 203 226 249 281.5];
+b=bar(x,y)
+xtips = b.XEndPoints;
+ytips = b.YEndPoints;
+labels = string(b.YData);
+text(xtips,ytips,labels,'HorizontalAlignment','center',...
+    'VerticalAlignment','bottom')
+```
+
+![](F:\shumo\plot161.png)
+
+##### 频数分布直方图
+
+示例：
+
+```matlab
+x = randn(1000,1);
+nbins = 25;
+h = histogram(x,nbins)
+```
+
+![](F:\shumo\plot162.png)
+
+##### 饼图
+
+使用相量法绘制饼图，系统会自动计算单个值占向量值之和的占比。示例：
+
+```matlab
+X = [4 1 5];
+labels = {'Taxes','Expenses','Profit'};
+pie(X,labels)
+```
+
+![](F:\shumo\plot163.png)
+
+##### 箱线图
+
+示例：
+
+```matlab
+Y = magic(10);
+boxchart(Y)
+xlabel('Column')
+ylabel('Value')
+```
+
+![](F:\shumo\plot164.png)
+
+##### 热力图
+
+常用于可视化相关系数矩阵：
+
+```matlab
+x=randi([1 6],6,100);
+h=corrcoef(x');
+heatmap(h)
+```
+
+![](F:\shumo\plot165.png)
+
+##### 聚类树状图*
+
+在系统聚类中会使用到，以下只示例调用方法：
+
+```matlab
+X = rand(10,3);
+tree = linkage(X,'average');
+figure()
+dendrogram(tree)
+```
+
+![](F:\shumo\plot166.png)
