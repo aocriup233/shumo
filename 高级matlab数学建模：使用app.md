@@ -29,7 +29,7 @@ data=data.replace(mapping)
 
 注意默认的清洗缺失数据的方法为“填充缺失-线性插值”，可以根据需要选择删除数据或者采用其他差值方法。
 
-![](.shumo/imag04.png)
+![](./shumo/imag04.png)
 
 同理可以清洗离群数据，但是数据预处理环节往往是为分类或者回归做准备，处理离群数据可能会对后续工作产生负面影响。
 
@@ -37,7 +37,7 @@ data=data.replace(mapping)
 
 根据需要进行数据平滑处理或者归一化处理，这里只演示归一化数据的方法：
 
-![](.shumo/imag05.png)
+![](./shumo/imag05.png)
 
 默认使用zscore方法进行数据归一化。
 
@@ -49,15 +49,15 @@ data=data.replace(mapping)
 
 其中响应即为你需要分类的变量，观测变量是分类指标，在右侧对话框中可以选择验证方案和测试集，一般留出10%的数据作为测试集数据。
 
-![](.shumo/imag11.png)
+![](./shumo/imag11.png)
 
 步骤2：进行特征选择和降维操作
 
-![](.shumo/imag12.png)
+![](./shumo/imag12.png)
 
 特征选择中提供了众多常用的特征排序算法，根据需要进行选择，可以起到减少特征数减少运算量的作用，以下是采用单因素方差分析(ANOVA)的结果：
 
-![](.shumo/imag13.png)
+![](./shumo/imag13.png)
 
 可以在分类中加入主成分分析(PCA)起到降低维度的作用。
 
@@ -71,9 +71,9 @@ data=data.replace(mapping)
 
 根据需求，可以在摘要中改变模型的参数，这也是优化分类过程的一部分。
 
-![](.shumo/imag14.png)
+![](./shumo/imag14.png)
 
-![](.shumo/imag15.png)
+![](./shumo/imag15.png)
 
 步骤4：进行模型训练，默认使用并行计算加速
 
@@ -81,7 +81,7 @@ data=data.replace(mapping)
 
 可以使用混淆矩阵热力图或者roc曲线的方式检验准确率。
 
-![](.shumo/imag16.png)
+![](./shumo/imag16.png)
 
 步骤6：导出模型并进行预测
 
